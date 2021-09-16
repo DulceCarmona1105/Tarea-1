@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa 1</title>
+    <link rel="stylesheet" href="CSS/estilox.css" type="text/css"/>
+    <!--Links de bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+</head>
+<body id="body">
+    <header>
+        <h1><a href="index.html">INICIO</a></h1>
+        Programa que crea inputs y cambia el color de fondo.
+    </header>
+    <!-- AQUI NO PUDE IMPLEMENTAR LOS ARTICLES, EN VERDAD NO SUPE COMO AGREGARLOS A PANTALLA, SOLO LOGRÉ QUE SE AGREGARAN (LO VI EN CONSOLA)
+    Y CON EL FORM E INPUT LOGRÉ AÑADIRLO A PANTALLA CON EL APPENDCHILD -->
+    <form id="form">
+        <input class="input" type="text" placeholder="X" onchange="cambiarfondo(this)">
+    </form>
+    <aside>
+        <!-- DE IGUAL MANERA COMO YA MENCIONÉ, LO MANEJÉ CON UN BOTÓN QUE ME FUERA AGREGANDO LOS ELEMENTOS MANDANDO LLAMAR EL EVENTO
+        A TRAVÉS DEL ID DEL BOTÓN -->
+        <p> Presiona el botón para agregar más cajas:</p>
+        <button id="btn">Agregar</button>
+    </aside>
+    <aside>
+        <!-- LA PARTE DE LOS COLORES LA APLIQUÉ PARA TODO EL BODY, PERO PUES NO PUDE CAMBIAR EL COLOR DE LOS INPUTS A PESAR DE IMPLEMENTAR LA MANERA
+        DE HACERLO CON JavaScript -->
+        <p>Selecciona una color:</p>
+        <select id="colores" onchange="cambiarfondo(this)">
+        <option value="0">Selecciona el color...</option>
+        <option value="IndianRed">Rojo</option>
+        <option value="LightPink">Rosa</option>
+        <option value="DarkOrange">Naranja</option>
+        <option value="Khaki">Amarillo</option>
+        <option value="Thistle">Lila</option>
+        <option value="PaleGreen">Verde</option>
+        <option value="LightSteelBlue">Azul</option>
+        </select>
+    </aside>
+    <!-- FINALMENTE PUES MUCHO MENOS PUDE CAMBIARLE EL BORDE AL INPUT :(
+    PERDÓN FUE LO ÚNICO QUE PUDE LOGRAR, ENTRE 10 LLORADAS QUE ME ECHÉ,
+    5 TUTORIALES. TODO LO QUE HEMOS ESTADO VIENDO ES ALGO NUEVO PARA MÍ
+    A COMPARACIÓN DE LO QUE VI EL CUATRI PASADO  -->
+    
+    
+    <script src="JS/funcionalidad.js"></script>
+
+    <footer>
+        <h6>Ideas Creativas -@anahitinocot</h6>  
+        <h6>Temas técnicos-@aha</h6> 
+        <h6>Realizado Por: Dulce Guadalupe Carpio Carmona</h6> 
+     </footer>
+</body>
+</html>
+
