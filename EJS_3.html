@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarea 3</title>
+    <link rel="stylesheet" href="css/EJS_3.css" type="text/css" />
+    <!--Links de bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">Inicio</a></h1>
+    </header>
+    <section class="row container-fluid" id="todo">
+      <aside id="lateral" class="col-sm-3">
+        <select name="" id="temas">
+          <option value="0" disabled>Seleccione...</option>
+          <option value="datos">Sobre nosotros...</option>
+          <option value="nodos">Reservaciones</option>
+        </select>
+      </aside>
+      <section id="principal" class="col-sm-9">
+        <article id="datos" class="contenedor">
+          <h3>Bienvenido al restaurante la capellina.</h3>
+          <p>Abrimos nuestras puertas en octubre del 2005 en Guanajuato Capital, 
+            estamos ubicados en una finca que data desde 1673, la cual era la antigua 
+            fundidora de oro y plata de la casa de la moneda.</p>
+        </article>
+        <article id="nodos" class="contenedor">
+          <h3>Elija el número de mesas a reservar</h3>
+          <select name="" id="reservacion">
+            <option value="0" readonly>Selecciona una opción</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <p id="mesas"></p>
+          <input type="button" id="mostrar" value="Mostrar">
+        </article>
+
+        <hr />
+        <p id="resultado" class="res"> Espere un momento...</p>
+      </section>
+    </section>
+
+    <footer>
+      <h6>Realizado Por: Dulce Guadalupe Carpio Carmona </h6>
+    </footer>
+    <script src="js/funcionalidad2.js"></script>
+  </body>
+</html>
