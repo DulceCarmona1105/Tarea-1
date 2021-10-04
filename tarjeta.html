@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/est.css" type="text/css" />
+    <!--Links de bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Tarjeta</title>
+  </head>
+  <body>
+    <header>
+        <h1><a href="index.html">Inicio</a></h1><br>
+        <h2>Crear una tarjeta de felicitación</h2>
+    </header>
+    <section id="tema">
+        Selecciona un tema<br><br>
+        <label for="navidad">Navidad</label>
+        <input type="radio" id="navidad" name="op1" value="navidad" onclick="f1()" checked/><br><br>
+        <label for="independencia">Día de la independencia</label>
+        <input type="radio" id="independencia" name="op1" value="independencia" onclick="f2()"/><br><br>
+        <label for="navidad">Día del programador</label>
+        <input type="radio" id="programador" name="op1" value="programador" onclick="f3()"/>
+    </section> 
+    <section id="color">
+        Selecciona un color de fondo<br><br>
+        <input type="color" id="ctarj">
+        <input type="button" class="btn btn-info" id="a" onclick="c()" value="Elige el color">
+    </section>
+    <section id="marco">
+        Selecciona un marco<br><br>
+        <img src="img/mnav.png" alt="Marco Navidad" id="mnav"> 
+        <input type="radio" id="mn" name="op2" value="Navidad" onclick="f4()" checked/><br><br>
+        <img src="img/mind.png" alt="Marco Día Independencia" id="mind">
+        <input type="radio" id="mi" name="op2" value="Día de la independencia" onclick="f5()"/><br><br>
+        <img src="img/mpro.png" alt="Marco Día Programador" id="mpro">
+        <input type="radio" id="mp" name="op2" value="Día del programador" onclick="f6()"/>
+    </section>
+    <section id="img">
+        Selecciona una imagen<br><br>
+        <img src="img/imgnav.jpg" alt="Navidad" id="imgnav"> 
+        <input type="radio" id="in" name="op3" value="Navidad"  onclick="f7()" checked><br><br>
+        <img src="img/imgind.png" alt="Día Independencia" id="imgind">
+        <input type="radio" id="ii" name="op3" value="Día de la independencia"  onclick="f8()"><br><br>
+        <img src="img/imgpro.jpg" alt="Día Programador" id="imgpro">
+        <input type="radio" id="ip" name="op3" value="Día del programador"  onclick="f9()">
+    </section>
+    <section id="datos">
+        Ingresa los datos<br><br>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="felicitacion" placeholder="Felicitación corta">
+        <input type="text" id="desc" placeholder="Más texto...">
+        <input type="button" class="btn btn-info" id="dat" onclick="enviar()" value="Manda los datos a escribirse">
+    </section>
+    <section id="envia">
+        <input type="button" class="btn btn-info" value="MOSTRAR" id="mostrar"/>
+    </section>
+    <section id="caja">
+        <p id="resultado" class="res">...</p>
+        <article id="color2">
+            <article id="imga">
+                <img src="img/mnav.png" id="imgg">
+                <img src="img/imgnav.jpg" id="imgg2">
+            </article>
+        </article>
+        <p id="nom">Nombre...</p>
+        <p id="feli">Subtítulo...</p>
+        <p id="des">Descripción...</p>
+    </section>
+    <script src="JS/js.js"></script>
+  </body>
+</html>
