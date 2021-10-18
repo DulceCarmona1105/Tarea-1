@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/e.css">
+    <title>Act 1 2do Parcial</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+   <header id="encabezado">
+       <h1>ENCUESTA DE FRAMEWORKS</h1>
+   </header>
+   <section id="seccion">
+       <article>
+           <h3>Te gusta programar?</h3>
+           <input type="radio" class="r1" v-model="respuesta" @click="mostrar()" value="SI">SI
+           <input type="radio" class="r1" v-model="respuesta" @click="mostrar()" value="NO">NO<br>
+           <hr>
+           <span v-if="aparecerSI"> 
+               <label>¿Cuántos años llevas programando? (Si solo llevas algunos meses coloca 0)</label> 
+               <input type="number" v-model="años" @click="ap()" min="0"><br><hr>
+               <label>{{exmo}}</label>
+               <input type="text" v-model="moex" value=""><br><hr>
+               <label>Escribe los lenguajes de programación que conoces (Uno a uno)</label>
+               <input type="text" v-model="l" @keyup.enter="agregar()">
+               <button @click="agregar()">Agregar lenguaje</button>
+               <ul>
+                   <li v-for="(ele, index) in ls" :key ="index">{{ele}}</li>
+               </ul> <br><hr>
+               <button @click="enviarform()" class="btn btn-info">Envía tus respuestas</button><br>
+               <ul>
+                    <li v-for="(dato, index) in datos" :key ="index">{{dato}}</li>
+                </ul> <br><hr>
+            </span>
+            <span v-if="aparecerNO">
+                    ¡Gracias por tu participación!
+            </span>
+       </article>
+   </section>
+<script src="JS/js2.js"></script>
+</body>
+</html>
