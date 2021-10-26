@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYM</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="CSS/eg.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <header class="bg-info text-center text-white">
+       <h1> Gimnasio "Las barras praderas" Suplementos Alimenticios</h1>
+   </header>
+   <section class="container-fluid row" id="clases">
+        <div class="row" id="pd">
+            <div class="col-12">
+            <br><h4>Nuevo Producto</h4><br>
+                <label>Nombre</label>
+                <input type="text" class="form-control my-3" v-model="NuevoNombre"/>
+                <label>Cantidad</label>
+                <input type="number" class="form-control my-3" v-model="NuevoCantidad"/>
+                <label>Precio</label>
+                <input type="number" class="form-control my-3" v-model="NuevoPrecio"/>
+                <button class="btn btn-primary" @click="agregar()">Agregar</button>
+            </div>
+        </div>
+        <div class="row" id="sd">
+            <div class="col-12">
+                <br><h4>Productos: {{productosTotales}}</h4><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>CANTIDAD</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>NOMBRE</h5>
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <h5>PRECIO</h5>
+                    </div>
+                    <div class="col-md-2 text-right">
+                        <h5>TOTAL</h5>
+                    <br>
+                    </div>
+                </div>
+                    <div class="row" v-for= "producto in productos">
+                    
+                        <div class="col-md-4">
+                            <button class="btn btn-primary" @click="producto.cantidad++" :disabled="producto.cantidad==100" >+</button>
+                            {{producto.cantidad}} 
+                            <button class="btn btn-danger" @click="producto.cantidad--" :disabled="producto.cantidad==0" >-</button>
+                        </div>
+                        <div class="col-md-4">
+                            {{producto.nombre}}
+                        </div>
+                        <div class="col-md-2 text-right">
+                            {{producto.precio}}
+                        </div>
+                        <div class="col-md-2 text-right">
+                            {{producto.cantidad*producto.precio}}
+                        <br>
+                        </div>
+                        
+                    </div>
+                    <br>
+                    <h6>Subtotal: {{subtotal}}</h6>
+                    <h6>Iva: {{iva}}</h6>
+                    <h6>Total: {{tot}}</h6>
+
+            </div>
+        </div>
+   </section>   
+<script src="JS/jsg.js"></script>
+</body>
+</html>
