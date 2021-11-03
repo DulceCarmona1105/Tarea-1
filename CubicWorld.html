@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="CSS/ecw.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <header class="bg-info text-center text-white">
+       <h1> CUBIC WORLD</h1>
+   </header>
+   <section class="container-fluid row" id="clases">
+        <div class="caja">
+            <div class="col-12">
+                <h2>Buscar Bebida</h2>
+                <input type="search" v-model="busqueda" placeholder="Buscar Bebida"/>
+                   <ul class="list-unstyled text-center">
+                        <li v-for="producto in buscarProducto">
+                            {{producto.nombre}} -> ${{producto.precio}}
+                        </li>
+                    </ul>
+                    <h5>Coincidencias: {{productosEncontrados}}</h5>
+            </div>
+        </div>
+        <div class="caja">
+            <div class="col-12">
+                <h3>Buscar Por Precio Máximo</h3>
+                <div class="text-center">
+                    <input type="range" min="20" max="50" v-model="minimo"/>
+                    <h3>$ {{minimo}}</h3>
+                    <ul class="list-unstyled text-center">
+                         <li v-for="producto in busqprecio">
+                             Producto: {{producto.nombre}} -> ${{producto.precio}}
+                         </li>
+                     </ul>
+                   </div>
+            </div>
+            </div>
+        </div>
+        <div class="caja">
+            <div class="col-12">
+                <h3>Lista de deseos</h3>
+                <ul class="list-unstyled text-left">
+                    <!-- <li v-for="(nom, index) in noms" :key ="index">{{nom}}</li>
+                    <li v-for="(pre, index) in pres" :key ="index">{{pre}}</li> -->
+                    <li>
+                        {{nom}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="caja">
+            <div class="container-fluid">
+                <div class="col-sm-10 col-md-7">
+                    <h3>Productos</h3>
+                    <div class="lightbox" v-for="producto in productos">
+                        <h5 v-model="nom">{{producto.nombre}}</h5>
+                        <img :src="producto.foto"> <button class="btn btn-primary" @click="agregar()">Agregar a lista</button>
+                        <a>Ingredientes: {{producto.ingrediente}}</a><br>
+                        <a>Tamaño: {{producto.tamaño}}</a> 
+                        <a v-model="pre">Precio: ${{producto.precio}}</a><br>
+                        <a>Vigente: {{producto.vigente}}</a><hr>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+   </section>   
+<script src="JS/jcw.js"></script>
+</body>
+</html>

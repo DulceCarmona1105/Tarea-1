@@ -9,8 +9,6 @@ const app= new Vue({
             {nombre: "Proteína de Fresa", cantidad: 3, precio: 80},
             {nombre: "Multivitanínico", cantidad: 5, precio: 300},
         ],
-        minimo:5,
-        busqueda: '',
     },
     methods:{
         agregar: function(){
@@ -47,5 +45,6 @@ const app= new Vue({
             t=this.subtotal+this.iva;
             return t;
         },
+        
     },
 });
